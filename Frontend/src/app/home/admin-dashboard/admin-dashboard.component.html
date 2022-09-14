@@ -1,0 +1,54 @@
+
+<div class="parent">
+  <div class="child">
+  <mat-toolbar>
+    <div class="cont">
+      <span><h1>Medicare</h1></span>
+      <p></p>
+     </div>
+    <app-nav-bar class="app-nav"></app-nav-bar>
+  
+  </mat-toolbar>
+      </div>
+
+
+
+
+  <div class="main">
+    <div class="sidebar">
+      <h1> ADMIN DASHBOARD </h1>
+
+
+    <button (click)="showorder()"><li class="sidebar__item">View Order</li>
+    </button><br><br>
+
+   <button (click)="showDrugs()"><li class="sidebar__item">Add Drugs</li>
+      </button><br><br>
+
+    <button (click)="showDruglist()"><li class="sidebar__item">View Drugs</li>
+     </button><br><br>
+
+   <button (click)="showSupplier()"><li class="sidebar__item">Add Supplier</li></button><br><br>
+
+   <button (click)="showSupplierlist()"><li class="sidebar__item">View Supplier</li>
+   </button><br><br>
+
+  </div>
+    <div class="child content">
+      <app-poder *ngIf="order1 && isLoggedIn "></app-poder>
+
+<app-drugsdetails  *ngIf="sp && isLoggedIn "></app-drugsdetails>
+
+<app-supplierdetails *ngIf="sp1 && isLoggedIn "></app-supplierdetails>
+
+
+<app-drugs *ngIf="show && isLoggedIn "></app-drugs>
+
+<br/><br><br/><br><br/><br><br/><br>
+
+<app-supplier *ngIf="shows &&  isLoggedIn"></app-supplier>
+      
+    </div>  
+</div>
+
+

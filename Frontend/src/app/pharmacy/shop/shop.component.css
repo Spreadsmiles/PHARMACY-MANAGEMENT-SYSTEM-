@@ -1,0 +1,121 @@
+.containers{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
+  
+  
+         body{
+          background-color:#eee;
+          font-family: "Poppins", sans-serif;
+          font-weight: 300;
+         }
+  
+         .height{
+          height: 20vh;
+         }
+         
+  
+         .search{
+         position: relative;
+         box-shadow: 0 0 40px rgba(51, 51, 51, .1);
+           
+         }
+  
+         .search input{
+  
+          height: 60px;
+          text-indent: 25px;
+          border: 2px solid #d6d4d4;
+  
+  
+         }
+  
+  
+         .search input:focus{
+  
+          box-shadow: none;
+          border: 2px solid blue;
+  
+  
+         }
+  
+         .search .fa-search{
+  
+          position: absolute;
+          top: 20px;
+          left: 16px;
+  
+         }
+  
+         .search button{
+  
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          height: 50px;
+          width: 110px;
+          background: blue;
+  
+         }
+  
+  
+  
+  
+  
+  
+  .card {
+      margin:55px 10px 0px 45px;
+      width: 250px;
+      height: 320px;
+    
+      border: 1px solid #CAD0D2;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+      .card__description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0;
+      }
+    
+        .card__descriptionIcon {
+          margin-top: 10px;
+          font-size: 32px;
+          margin-bottom: 10px;
+        }
+    
+        .card__descriptionText {
+          margin: 15px 0px 0px 0px;
+          color: #57727C;
+          font-size: 12px;
+          text-align: center;
+        }
+    
+      .card__price {
+        margin-top: 30px;
+        text-align: center;
+        color: #57727C;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 5px 15px;
+        border-top: 1px solid #D7DBDD;
+        background-color: #EEF3F5;
+      }
+  
+      .btn{
+        margin-top:-3px;
+      }
+  
+      .card__descriptions{
+        visibility:hidden;
+      }
+  
+  
+      

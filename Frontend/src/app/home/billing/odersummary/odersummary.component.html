@@ -1,0 +1,38 @@
+<mat-toolbar>
+  <div class="cont">
+    <span><h1>MEDICARE</h1></span>
+    <p></p>
+   </div>
+  <app-nav-bar class="app-nav"></app-nav-bar>
+
+</mat-toolbar>
+<div class="mt-5" data-bs-target="#drugs">
+    <h1 style="color: pink;"> ORDER SUMMARY</h1>
+    <table class="table table-bordered">
+      <thead class="thead" >
+        <tr>
+          <th>Usename</th>
+          <th>Product Id</th>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          
+
+        </tr>
+      </thead>
+      <tbody  class="tbody">
+        <tr *ngFor="let i  of cartList ">
+          <td>{{i.username}}</td>
+          <td>{{i.cartId}}</td>
+          <td>{{i.drugsName}}</td>
+
+          <td>{{i.drugsQty}}</td>
+          <td>{{i.total}}</td>
+          
+        
+        </tr>
+       
+      </tbody>
+      <button type="button" class="btn btn-danger" (click)="addToOrder(cartList)">Buy Now</button>
+    </table>
+  </div>

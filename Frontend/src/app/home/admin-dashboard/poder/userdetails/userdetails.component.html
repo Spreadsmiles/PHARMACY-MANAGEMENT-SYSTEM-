@@ -1,0 +1,30 @@
+<div *ngFor="let data of d">
+ 
+ <table class="table table-bordered">
+        <thead class="thead">
+            <tr>
+               <th width="2%">Username</th>
+               <th >DrugsName</th>
+               <th>DrugsCost</th>
+               <th> Drugs Qty</th>
+               <th>Stock Qty</th>
+                
+            </tr>
+        </thead>
+        
+        <tbody class="tbody">
+           
+                <tr *ngFor="let cart of data.cart"> 
+                
+                  <td >{{cart.username}} </td>
+                  <td > {{cart.drugsName}}</td>
+                  <td >{{cart.drugsCost}} </td>
+                  <td> {{cart.drugsQty}}</td>
+                  <td>{{cart.stockQty}} </td>
+                </tr>
+
+           
+        </tbody>
+        
+    </table>
+    

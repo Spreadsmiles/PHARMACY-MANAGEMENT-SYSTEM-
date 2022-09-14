@@ -1,0 +1,77 @@
+<!-- <ul>
+    <li *ngFor="let item of content">
+        {{item.drugsName}}
+    </li>
+</ul> -->
+<mat-toolbar>
+  <div class="cont">
+    <span><h1>MEDICARE</h1></span>
+    <p></p>
+   </div>
+  <app-nav-bar class="app-nav"></app-nav-bar>
+
+</mat-toolbar>
+
+<div class="body">
+<div class="container">
+
+  <div class="row height d-flex justify-content-center align-items-center">
+
+    <div class="col-md-8">
+
+      <form name="form">
+        <div class="search">
+          <i class="fa fa-search"></i>
+            <input type="text" class="form-control"[(ngModel)]="searchText" name="drugs"  placeholder="Search for Medicines/..." #drugs="ngModel">
+        </div>
+
+      </form>
+      
+      
+    </div>
+    
+  </div>
+</div>
+
+
+<owl-carousel-o [options]="customOptions">
+   
+  <ng-container *ngFor="let slide of slides">
+    <ng-template carouselSlide [id]="slide.id">
+      <div class="containers">
+  
+        <div class="card" *ngFor="let item of content | filter:searchText">
+            <div class="card__description">
+              <div class="card__descriptions">
+                <p>{{currentUser}}</p>
+              </div>
+              <div class="card__descriptionIcon"><i class="fas fa-capsules"></i></div>
+              <h4>{{item.drugsName}}</h4>
+              <div class="card__descriptionText">{{item.drugsDescription}}</div>
+            </div>
+            <div class="card__price">{{item.drugsCost}}</div>
+            <div class="a" >
+              <a href="/login" style="font-size:25px" *ngIf="!isLoggedIn" (click)="addnotcart()"><i class="fa fa-shopping-cart"></i></a>
+            </div>
+            
+            <div class="btn" >
+              <button style="font-size:25px" *ngIf="isLoggedIn" (click)="addToCart(item)"><i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          </div>
+    </ng-template>
+  </ng-container>
+     
+  </owl-carousel-o>
+  
+  </div>
+
+  <!-- (click)="addToCart(item.drugsId)" -->
+  <br/>
+  <br/>
+  <ng-template #loggedOut>
+    Please login.
+  </ng-template>
+
+  <!-- <app-cart *ngIf="showUserBoard && addToCarts" [pqr]="result"></app-cart> -->
+<!-- *ngIf="currentUser; else loggedOut -->

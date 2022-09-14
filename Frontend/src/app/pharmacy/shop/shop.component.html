@@ -1,0 +1,22 @@
+<mat-toolbar>
+  <div class="cont">
+    <span><h1>GET MEDS</h1></span>
+    <p></p>
+   </div>
+  <app-nav-bar class="app-nav"></app-nav-bar>
+
+</mat-toolbar>
+<div class="containers">
+
+    <div class="card" *ngFor="let item of content">
+        <div class="card__description">
+          <div class="card__descriptionIcon"><i class="fas fa-capsules"></i></div>
+          <h4>{{item.drugsName}}</h4>
+          <div class="card__descriptionText">{{item.drugsDescription}}</div>
+        </div>
+        <div class="card__price">{{item.drugsCost}}</div>
+        <div class="btn" >
+          <button style="font-size:25px" *ngIf="isLoggedIn" (click)="addToCart(item)"><i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      </div>

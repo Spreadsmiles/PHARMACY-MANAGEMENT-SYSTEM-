@@ -1,0 +1,40 @@
+
+
+<mat-toolbar>
+  <div class="cont">
+    <span><h1>Medicare</h1></span>
+    
+   </div>
+  <app-nav-bar class="app-nav"></app-nav-bar>
+
+</mat-toolbar>
+
+
+<form class="style" [formGroup]="checkoutForm" >
+    <div class="column">
+      <label for="your_name">Your Name</label>
+      <input type="text" id="your_name" name="yourname"/>
+      
+      <label for="your_email">Email Address</label>
+      <input type="email" id="your_email" name="youremail" />
+      
+      <label for="your_phone">Phone Number</label>
+      <input type="tel" id="your_phone" name="yourphone" />
+  
+      <label for="pincode">Pincode</label>
+      <input type="text" id="" name="pincode" />
+      
+      <label for="address">Delivery Address</label>
+      <textarea id="address" name="youraddress" ></textarea>
+    
+  
+     <input type="submit" value="place order" />
+     <input type="reset" value="Start Over" />
+<a href="/odersummary" class="btn btn-sm btn-primary"> Proceed</a>
+  
+    </div>
+    <img class="image"  src="/assets/img/images.png"/>
+
+    
+
+</form>

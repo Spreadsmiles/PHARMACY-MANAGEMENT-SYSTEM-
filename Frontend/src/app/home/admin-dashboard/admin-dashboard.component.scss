@@ -1,0 +1,41 @@
+.parent {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main {
+  display: flex;
+  flex-grow: 1;
+}
+
+.content {
+  flex-grow: 1;
+}
+  
+/* --------- Non-flexbox related styles --------- */
+.child {
+  display: flex;
+  align-items: center;
+  content: center;
+  
+  padding: 20px;
+  font-size: 20px;
+  line-height: 20px;
+  color: red;
+  background-color: aqua;
+  border-radius: 10px;
+  border: 0.1px solid black;
+}
+
+body {
+  background-color: #282c35;
+  font-family: Verdana;
+  font-weight: 600;
+  justify-content: flex-start;
+}
+.sidebar{
+  padding-right: 100px;
+  border: 5px solid black;
+  background-color:pink;
+}

@@ -1,0 +1,75 @@
+
+
+    <div class="mt-5" data-bs-target="#drugs">
+        <table   class="table table-bordered">
+          <thead class="thead">
+            <tr>
+              <th  width="20%">Supplier Id</th>
+              <th  width="20%">Supplier Name</th>
+              <th  width="20%">Email</th>
+              <th  width="20%">Availability Drugs</th>
+              <th  width="10%">Edit</th>
+              <th  width="10%">Delete</th>
+  
+            </tr>
+          </thead>
+          <tbody  class="tbody">
+            <tr *ngFor="let drug  of SupplierDetails ">
+              <td>{{drug.supplierId}}</td>
+              <td>{{drug.supplierName}}</td>
+              <td>{{drug.email}}</td>
+              <td>{{drug.availableDrugs}}</td>
+
+              <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="edit(drug)">Edit</button></td>
+              <td><button type="button" class="btn btn-danger" (click)="deletesupplier1(drug)">Delete</button></td>
+            
+            </tr>
+  
+          </tbody>
+        </table>
+      </div>
+  
+    
+  <div class="modal fade" id="exampleModal" tabindex="2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update Drugs</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+  
+          <div class="card" style="padding: 20px;">
+            <form #updatedForm="ngForm" (ngSubmit)="updateDrugs(updatedForm)">
+              <div class="form-group">
+                <label for="drugsId">supplierId :</label>
+                <input type="text" #supplierId [(ngModel)]="SupplierToUpdate.supplierId" class="form-control"name="supplierId" id="supplierId" class="form-control" placeholder="supplierId">
+              </div>
+              <div class="form-group">
+                <label for="drugsName">supplierName :</label>
+                <input type="text" #supplierName [(ngModel)]="SupplierToUpdate.supplierName" name="supplierName" id="supplierName" class="form-control"
+                  placeholder="supplierName">
+              </div>
+              <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" #email [(ngModel)]="SupplierToUpdate.email" name="email" id="email" class="form-control"
+                  placeholder="email">
+              </div>
+              <div class="form-group">
+                <label for="availableDrugs">Availability Drugs :</label>
+                <input type="availableDrugs" #availableDrugs [(ngModel)]="SupplierToUpdate.availableDrugs" name="availableDrugs" id="availableDrugs" class="form-control"
+                  placeholder="availableDrugs">
+              </div>
+    
+              <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-danger w-100">
+              </div>
+            </form>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

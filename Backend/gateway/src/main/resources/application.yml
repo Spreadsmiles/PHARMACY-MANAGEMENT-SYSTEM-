@@ -1,0 +1,54 @@
+server:
+  port: 7000
+  
+spring:
+  application:
+    name: Microservice-Gateway
+  cloud:
+    gateway:
+    
+     routes:
+      - id: Supplier-Service
+        uri: lb://Supplier-Service
+        predicates:
+        - Path=/supplier/**
+        filters:
+            - name: CircuitBreaker
+              args:
+                name: Supplier-Service
+                fallbackuri: forward:/SupplierFallBack
+                
+      - id: Drugs-Microservice
+        uri: lb://Drugs-Microservice
+        predicates:
+        - Path=/drugs/**
+        filters:
+            - name: CircuitBreaker
+              args:
+                name:  Drugs-Microservice
+                fallbackuri: forward:/DrugsFallBack
+      - id: Login-Service
+        uri: lb://Login-Service
+        predicates:
+        - Path=/api/auth/**
+        filters:
+            - name: CircuitBreaker
+              args:
+                name: Login-Service
+                fallbackuri: forward:/securityFallBack
+        
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+        
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+      
+  instance:
+    hostname: localhost

@@ -1,0 +1,28 @@
+
+  <table class="table table-bordered">
+    <thead class="thead">
+        <tr>
+           <th>orderId</th>
+           <th>userId</th>
+           <th>orderStatus</th>
+           <th>Total</th>
+           <th>verify</th>
+           <th>userdetails</th>
+            
+        </tr>
+    </thead>
+    <tbody class="tbody">
+        <tr *ngFor="let data of d">
+            <td>  {{data.orderId}}</td>
+            <td> {{data.userId}}</td>
+            <td> {{data.status}}</td>
+            <td> {{data.total}} </td>
+            <td><button type="button" class="btn btn-primary" (click)=" updateoder(data.orderId, data.userId,data.cart, data.total)"> verify</button> </td>
+            <td> <button type="button" class="btn btn-danger"   (click)="showuser()"> userdetails</button> </td>
+        </tr>
+    </tbody>
+</table>
+
+<app-userdetails  *ngIf="ss"></app-userdetails>
+ 
+   
